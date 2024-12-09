@@ -21,6 +21,8 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
+ services.logind.lidSwitch = "ignore";
+
   users.users.pachi = {
     isNormalUser = true;
     extraGroups = [
