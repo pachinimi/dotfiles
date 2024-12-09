@@ -32,7 +32,7 @@
   };
 
   # Set a static IP on the "downstream" interface
-networking.interfaces."eth0" = {
+networking.interfaces."enp1s0" = {
   useDHCP = false;
   ipv4.addresses = [{
     address = "10.0.0.1";
@@ -41,10 +41,10 @@ networking.interfaces."eth0" = {
 };
 networking.firewall.extraCommands = ''
   # Set up SNAT on packets going from downstream to the wider internet
-  iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+  iptables -t nat -A POSTROUTING -o wlp2s0 -j MASQUERADE
 
   # Accept all connections from downstream. May not be necessary
-  iptables -A INPUT -i enp2s0 -j ACCEPT
+  iptables -A INPUT -i enp1s0 -j ACCEPT
 '';
 # Run a DHCP server on the downstream interface
 services.kea.dhcp4 = {
@@ -52,7 +52,7 @@ services.kea.dhcp4 = {
   settings = {
     interfaces-config = {
       interfaces = [
-        "eth0"
+        "enp1s0"
       ];
     };
     lease-database = {
