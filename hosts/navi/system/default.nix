@@ -21,8 +21,6 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-
-
   users.users.pachi = {
     isNormalUser = true;
     extraGroups = [
