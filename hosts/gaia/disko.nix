@@ -4,12 +4,13 @@
       main = {
         device = "/dev/sda";
         type = "disk";
-        content = {
+              content = {
           type = "gpt";
           partitions = {
             grub = {
               size = "1M";
-              type = "EF02"; # for grub MBR
+              type = "EF02";
+              priority = 1;
             };
             boot = {
               size = "512M";
@@ -17,8 +18,8 @@
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
-                mountOptions = [ "umask=0077" ];
               };
+              priority = 2;
             };
             luks = {
               size = "100%";
