@@ -27,6 +27,7 @@
     inputs@{
       nixpkgs,
       home-manager,
+      disko,
       lanzaboote,
       spicetify-nix,
       ...
