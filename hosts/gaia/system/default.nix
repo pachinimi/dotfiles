@@ -9,6 +9,7 @@
 
   imports = [
     ./modules/boot.nix
+    ./modules/disko.nix
     ./modules/hardware.nix
     ./modules/network.nix
   ];
