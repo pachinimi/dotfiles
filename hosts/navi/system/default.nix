@@ -15,6 +15,7 @@
     ./modules/gnome.nix
     ./modules/hardware.nix
     ./modules/network.nix
+    ./modules/virtualisation.nix
   ];
 
   time.timeZone = "America/Sao_Paulo";
