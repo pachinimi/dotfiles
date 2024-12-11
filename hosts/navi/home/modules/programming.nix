@@ -4,6 +4,7 @@
 
   home.packages = with pkgs; [
     editorconfig-core-c
+    ghidra
     godot_4
     ispell
     nodePackages.js-beautify
