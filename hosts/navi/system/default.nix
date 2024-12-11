@@ -10,7 +10,6 @@
   imports = [
     ./modules/audio.nix
     ./modules/boot.nix
-    ./modules/disko.nix
     ./modules/fonts.nix
     ./modules/games.nix
     ./modules/gnome.nix
